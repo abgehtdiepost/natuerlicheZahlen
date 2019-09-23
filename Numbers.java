@@ -14,6 +14,8 @@ import java.util.ArrayList;
 public class Numbers {
     public int limit;
     public ArrayList<Integer> sums;
+    public ArrayList<Integer> primeNumbers;
+    public EratosthenesPrimeSieve pS;
     
     public Numbers (int limit) {
         if (checkLimit(limit)) {
@@ -23,8 +25,11 @@ public class Numbers {
             System.exit(0);
         }
         sums = new ArrayList<>();
+        pS = new EratosthenesPrimeSieve(limit);
+        
         getSums();
-        printDone();
+        calc();
+        //printDone();
         
     }
     
@@ -41,6 +46,16 @@ public class Numbers {
     public void getSums () {
         for (int i = 4; i <= limit; i+=2) {
             sums.add(i);
+        }
+    }
+    
+    public void calc () {
+        for (int i = 0; i < sums.size(); i+=2) {
+            if (pS.primeNumbers.get(i)*2 == sums.get(0)) {
+                System.out.println(sums.get(i) + " summe: " + sums.get(i) + " = " + pS.primeNumbers.get(i) + " + " + pS.primeNumbers.get(i));
+            } else {
+                
+            }
         }
     }
     
