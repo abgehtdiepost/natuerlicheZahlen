@@ -29,7 +29,6 @@ public class Numbers {
         
         getSums();
         calc();
-        //printDone();
         
     }
     
@@ -50,18 +49,32 @@ public class Numbers {
     }
     
     public void calc () {
-        for (int i = 0; i < sums.size(); i+=2) {
-            if (pS.primeNumbers.get(i)*2 == sums.get(0)) {
-                System.out.println(sums.get(i) + " summe: " + sums.get(i) + " = " + pS.primeNumbers.get(i) + " + " + pS.primeNumbers.get(i));
-            } else {
-                
+        for (int i = 0; i < sums.size(); i++) {
+            for (int j = 0; j < sums.size(); j++) {
+                if (pS.primeNumbers.get(i)+pS.primeNumbers.get(j) == sums.get(i)){
+                    System.out.println(sums.get(i) + " summe: " + sums.get(i) + " = " + pS.primeNumbers.get(i) + " + " + pS.primeNumbers.get(j));
+                }
             }
         }
+        
+        
+        
+        /*
+        for (int i = 0; i < sums.size(); i++) {
+            if (pS.primeNumbers.get(i)*2 == sums.get(i)) {
+                System.out.println(sums.get(i) + " summe: " + sums.get(i) + " = " + pS.primeNumbers.get(i) + " + " + pS.primeNumbers.get(i));
+            } else {
+                    if (pS.primeNumbers.get(i) + pS.primeNumbers.get(i+1) == sums.get(i)) {
+                    
+                }
+                
+            }
+        }*/
     }
     
-    public void printDone () {
+    /*public void printDone () {
         for (int i = 0; i < sums.size(); i++) {
             System.out.println(sums.get(i) + " summe: ");
         }
-    }
+    }*/
 }
